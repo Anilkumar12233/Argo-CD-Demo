@@ -1,0 +1,8 @@
+# prettier-ignore
+
+apiVersion: v2
+name: product-service
+description: A Helm chart for Product Service with Cosmos DB
+type: application
+version: 1.0.0
+appVersion: "1.0"

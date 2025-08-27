@@ -1,0 +1,28 @@
+# prettier-ignore
+
+replicaCount: 1
+
+image:
+  repository: anild12121/cosmosdb
+  tag: "1.0"
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 8080
+  nodePort: 30080
+
+resources:
+  limits:
+    cpu: "500m"
+    memory: "512Mi"
+  requests:
+    cpu: "250m"
+    memory: "256Mi"
+
+env:
+  COSMOS_ENDPOINT: "https://cosmos-acc-db.documents.azure.com:443/"
+  COSMOS_KEY: "5yoJeUpHZdigluHGdCYDa3TQo475KIEFVk1ISy1qIh6OxJOa7Kh2UTyucw8ymz8gvakPq18hypwZACDb7KpEWg=="
+  COSMOS_DATABASE: "ProductDB"
+  COSMOS_CONTAINER: "products"
+  COSMOS_PARTITION_KEY: "/category"
